@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <link rel="stylesheet" href="src/styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.0/css/bootstrap.min.css"
+      integrity="sha384-9aIt2nRpC12Uk9gS9baDl411NQApFmC26EwAOH8WgZl5MYYxFfc+NcPb1dKGj7Sk"
+      crossorigin="anonymous"
+    />
+    <script
+      src="https://kit.fontawesome.com/915ac59075.js"
+      crossorigin="anonymous"
+    ></script>
+    <title>Weather app</title>
+  </head>
+  <body>
+      <p id="temperature-description"></p>
+    <div class="weather-app">
+      <header>
+        <section class="location">
+          <form id="search-form">
+            <input
+              id="city-input"
+              type="text"
+              autocomplete="off"
+              class="search-box"
+              placeholder="search for a city"
+            />
+          </form>
+        </section>
+        <section class="location">
+            <button id="current-location-button">
+                My location
+                
+              </button>
+       
+                
+          <h1 id="city"></h1>
+          <div class="date" id="date">Sunday, 1 August 2020</div>
+        </section>
+        
+      </header>
+      
+     
+
+      <div class="current">
+        <div id="temperature"></div>
+       
+     
+        <div class="hi-low"> </div>
+      
+
+
+      <div class="container">
+        <div class="day">Monday ☀️ <span></span></div>
+        <div class="day">Tuesday 🌧 <span> </span></div>
+        <div class="day">Wednesday🌧 <span></span></div>
+        <div class="day">Thursday 🌧 <span></span></div>
+        <div class="day">Friday ☀️ <span></span></div>
+      </div>
+
+      <div class = "col-6">
+          <ul>
+            <li>
+              precipitation : <span = id "precipitation"></span>%
+            </li>
+            <li>
+                humidity : <span = id "humidity"></span>%
+          </li>
+          <li>
+              wind : <span = id "wind"></span>km/h
+          </li>
+
+      <nav>
+        Friday, 1st August <br />
+        Last update at 17.31
+      </nav>
+    </div>
+    <script src="src/index.js"></script>
+  </body>
+</html>
