@@ -18,68 +18,120 @@
     <title>Weather app</title>
   </head>
   <body>
-      <p id="temperature-description"></p>
     <div class="weather-app">
       <header>
         <section class="location">
-          <form id="search-form">
-            <input
-              id="city-input"
-              type="text"
-              autocomplete="off"
-              class="search-box"
-              placeholder="search for a city"
-            />
-          </form>
+          <div class="row">
+            <div class="col">
+              <form id="search-form">
+                <input
+                  id="city-input"
+                  type="text"
+                  autocomplete="off"
+                  class="search-box"
+                  placeholder="search for a city"
+                />
+              </form>
+            </div>
+          </div>
         </section>
         <section class="location">
-            <button id="current-location-button">
-                My location
-                
-              </button>
-       
-                
-          <h1 id="city"></h1>
-          <div class="date" id="date">Sunday, 1 August 2020</div>
+          <div class="row">
+            <div class="col">
+              <button id="current-location-button">My location</button>
+            </div>
+          </div>
+
+          <div class="row">
+            <div class="col">
+              <h1 id="city"></h1>
+              <div class="date" id="date">Sunday, 1 August 2020</div>
+            </div>
+          </div>
         </section>
-        
       </header>
-      
-     
 
-      <div class="current">
-        <div id="temperature"></div>
-       
-     
-        <div class="hi-low"> </div>
-      
-
-
-      <div class="container">
-        <div class="day">Monday ☀️ <span></span></div>
-        <div class="day">Tuesday 🌧 <span> </span></div>
-        <div class="day">Wednesday🌧 <span></span></div>
-        <div class="day">Thursday 🌧 <span></span></div>
-        <div class="day">Friday ☀️ <span></span></div>
+      <div class="row">
+        <div class="col-6">
+          <div class="clearfix weather-temperature">
+            <img src="#" alt="Clear" id="icon" class="float-left" />
+            <div class="float-left">
+              <ul>
+                <li><strong id="temperature"></strong>°C</li>
+                <li id="description"></li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <div class="col-6">
+          <ul>
+            <li>humidity : <span id="humidity"></span>%</li>
+            <li>wind : <span id="wind"></span>km/h</li>
+          </ul>
+        </div>
       </div>
 
-      <div class = "col-6">
-          <ul>
-            <li>
-              precipitation : <span = id "precipitation"></span>%
-            </li>
-            <li>
-                humidity : <span = id "humidity"></span>%
-          </li>
-          <li>
-              wind : <span = id "wind"></span>km/h
-          </li>
+      <div class="row weather-forecast" id="forecast">
+        <div class="col-2">
+          <h3>1700</h3>
+          <img
+            src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png"
+            alt=""
+          />
+          <div class="weather-forecast-temperature">
+            <strong>22°</strong>17°
+          </div>
+        </div>
+        <div class="col-2">
+          <h3>2100</h3>
+          <img
+            src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png"
+            alt=""
+          />
+          <div class="weather-forecast-temperature">
+            <strong>22°</strong>17°
+          </div>
+        </div>
+        <div class="col-2">
+          <h3>2400</h3>
+          <img
+            src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png"
+            alt=""
+          />
+          <div class="weather-forecast-temperature">
+            <strong>22°</strong>17°
+          </div>
+        </div>
+        <div class="col-2">
+          <h3>0300</h3>
+          <img
+            src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png"
+            alt=""
+          />
+          <div class="weather-forecast-temperature">
+            <strong>22°</strong>17°
+          </div>
+        </div>
+        <div class="col-2">
+          <h3>0600</h3>
+          <img
+            src="https://ssl.gstatic.com/onebox/weather/48/rain_s_cloudy.png"
+            alt=""
+          />
+          <div class="weather-forecast-temperature">
+            <strong>22°</strong>17°
+          </div>
+        </div>
+      </div>
 
-      <nav>
-        Friday, 1st August <br />
-        Last update at 17.31
-      </nav>
+      <small>
+        <a href="https://github.com/anna262/Anna-s-project" target="blank"
+          >Open-source code</a
+        >
+        by Anna Szczek
+      </small>
     </div>
     <script src="src/index.js"></script>
   </body>
 </html>
+
