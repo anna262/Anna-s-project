@@ -1,13 +1,4 @@
 function formatDate(date) {
-  let hours = date.getHours();
-  if (hours < 10) {
-    hours = `0${hours}`;
-  }
-  let minutes = date.getMinutes();
-  if (minutes < 10) {
-    minutes = `0${minutes}`;
-  }
-
   let dayIndex = date.getDay();
   let days = [
     "Sunday",
@@ -20,7 +11,19 @@ function formatDate(date) {
   ];
   let day = days[dayIndex];
 
-  return `${day} ${hours}:${minutes}`;
+  return `${day} ${formatHours(date)}`;
+}
+
+function formatHours(date) {
+  let hours = date.getHours();
+  if (hours < 10) {
+    hours = `0${hours}`;
+  }
+  let minutes = date.getMinutes();
+  if (minutes < 10) {
+    minutes = `0${minutes}`;
+  }
+  return `${hours}:${minutes}`;
 }
 
 function displayWeatherCondition(response) {
@@ -35,12 +38,50 @@ function displayWeatherCondition(response) {
   );
   document.querySelector("#description").innerHTML =
     response.data.weather[0].main;
+
+  document
+    .querySelector("#icon")
+    .setAttribute(
+      "src",
+      `http://openweathermap.org/img/wn/${response.data.weather[0].icon}@2x.png`
+    );
+}
+
+function dispalyForecast(response) {
+  let forecastElement = document.querySelector("#forecast");
+  forecastElement.innerHTML = null;
+  let forecast = null;
+
+  for (let index = 0; index < 6; index++) {
+    forecast = response.data.list[index];
+    forecastElement.innerHTML += `
+    <div class="col-2">
+      <h3>
+        ${formatHours(new Date(forecast.dt * 1000))}
+      </h3>
+      <img
+        src="http://openweathermap.org/img/wn/${
+          forecast.weather[0].icon
+        }@2x.png"
+      />
+      <div class="weather-forecast-temperature">
+        <strong>
+          ${Math.round(forecast.main.temp_max)}°
+        </strong>
+        ${Math.round(forecast.main.temp_min)}°
+      </div>
+    </div>
+  `;
+  }
 }
 
 function searchCity(city) {
   let apiKey = "5f472b7acba333cd8a035ea85a0d4d4c";
   let apiUrl = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=${apiKey}&units=metric`;
   axios.get(apiUrl).then(displayWeatherCondition);
+
+  apiUrl = `https://api.openweathermap.org/data/2.5/forecast?q=${city}&appid=${apiKey}&units=metric`;
+  axios.get(apiUrl).then(dispalyForecast);
 }
 
 function handleSubmit(event) {
@@ -72,3 +113,4 @@ let currentLocationButton = document.querySelector("#current-location-button");
 currentLocationButton.addEventListener("click", getCurrentLocation);
 
 searchCity("Sydney");
+
