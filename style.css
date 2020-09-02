@@ -6,25 +6,19 @@
 body {
   font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
     Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif, sans-serif;
-  background-image: url("https://images.unsplash.com/photo-1530908295418-a12e326966ba?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=934&q=80");
+  background-image: url("https://images.unsplash.com/photo-1514958655598-d0b08d03510a?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=800&q=60");
   background-size: cover;
   background-position: top center;
   background-color: linear;
 }
-.weather-app {
-  display: flex;
-  flex-direction: column;
-  text-align: center;
-  background-image: linear-gradient(to bottom, rgba (0, 0, 0, 0.3));
-}
+
 header {
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 50px 15px 15px;
+
   flex-direction: column;
 }
-
 header input {
   width: 100%;
   max-width: 280px;
@@ -34,14 +28,10 @@ header input {
   background-color: rgba(255, 255, 255, 0.3);
   border-radius: 16px 0px 16px 0px;
   color: grey;
-  border-bottom: 3px solid rgb(175, 71, 90);
+  border-bottom: 3px solid rgb(180, 42, 67);
   font-size: 20px;
   font-weight: 300;
   transition: 0.2s ease-out;
-}
-
-.header input:focus {
-  background-color: rgba(255, 255, 255, 0.3);
 }
 
 main {
@@ -49,62 +39,97 @@ main {
   padding: 25px 25px 50px;
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: left;
   text-align: center;
+}
+.weather-app {
+  display: flex;
+  flex-direction: column;
+  text-align: center;
+  background-image: linear-gradient(to bottom, rgba (0, 0, 0, 0.3));
+  padding: 0 15px;
+  margin-top: 20px;
 }
 
 .location {
-  color: rgb(212, 57, 83);
-  font-size: 32px;
-  font-weight: 500;
+  color: rgb(182, 8, 37);
+  text-align: left;
+  font-size: 10px;
+  font-weight: 100;
   margin-bottom: 5px;
 }
 
-.location .date {
+#city {
+  text-align: left;
+  font-size: 30px;
+}
+
+#date {
   color: rgb(75, 20, 32);
   font-size: 16px;
+  text-align: left;
+
+  margin-bottom: 10px;
 }
-.current .temp {
+
+.temp {
   color: rgb(75, 20, 32);
   font-size: 40px;
   font-weight: 500px;
 }
-
-.weather {
+weather {
   color: orange;
   font-size: 20px;
   font-weight: 500px;
   font-style: bold;
   margin-bottom: 15px;
 }
-.hi-low {
-  color: rgb(75, 20, 32);
-  font-size: 20px;
-  font-weight: 500px;
-  margin: 0px 0px;
-}
+
 .container {
   color: rgb(53, 0, 11);
-  font-size: 20px;
+  font-size: 10px;
   font-weight: 500px;
   margin: 0px auto;
 }
-nav {
-  color: black;
-  text-align: left;
-  padding: 1%;
-  margin: 1%;
-  font-size: 10px;
-  font-weight: 600;
-}
-.col-6 {
+col-6 {
   color: black;
   text-align: right;
-  padding: 1%;
+  padding: 10px 15px;
   margin: 1%;
   font-size: 10px;
   font-weight: 600;
 }
-.my location button {
- 
+li {
+  list-style: none;
+  text-align: left;
+}
+
+.current-weather {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  justify-content: center;
+}
+
+.current-weather ul {
+  margin-bottom: 0;
+}
+
+#contact {
+  margin-top: 100px;
+}
+
+h3 {
+  font-size: 10px;
+  font-weight: 600;
+}
+
+#temperature {
+  font-size: 30px;
+  font-weight: 600;
+  text-align: center;
+}
+
+#icon {
+  text-align: center;
 }
